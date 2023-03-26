@@ -101,4 +101,5 @@ public class Problem {
                 ", diametrBarabana=" + diametrBarabana +
                 '}';
     }
+
 }
