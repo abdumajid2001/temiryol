@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Javob</title>
+
+    <style>
+        #red {
+            height: 100vh;
+            background-color: #FF0000;
+        }
+
+        #green {
+            height: 100vh;
+            background-color: #009900;
+        }
+    </style>
+</head>
+<body>
+<div th:id="${result} ? green : red"><a th:href="@{/}"><h1>Orqaga</h1></a></div>
+</body>
+</html>
