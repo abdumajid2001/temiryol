@@ -1,109 +1,139 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .hero-image {
+            background-image: url("https://c1.wallpaperflare.com/preview/338/701/262/architecture-building-building-site-business.jpg");
+            background-color: #cccccc;
+            height: 100vh;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: relative;
+        }
+
+        .hero-text {
+            text-align: center;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+        }
+    </style>
 
     <script>
         function validateForm() {
-            var diameter = document.forms["problem"]["diameter"].value;
-            var sila = document.forms["problem"]["sila"].value;
-            var coefficient = document.forms["problem"]["coefficient"].value;
-            var ugol = document.forms["problem"]["ugol"].value;
-            var a = document.forms["problem"]["a"].value;
-            var b = document.forms["problem"]["b"].value;
-            var c = document.forms["problem"]["c"].value;
-            var weight = document.forms["problem"]["weight"].value;
-            var gruz = document.forms["problem"]["gruz"].value;
-            var loparey = document.forms["problem"]["loparey"].value;
-            var poteri = document.forms["problem"]["poteri"].value;
-            var blokov = document.forms["problem"]["blokov"].value;
+            var problem = document.forms["problem"];
+            var diameter = problem["diameter"].value;
+            var sila = problem["sila"].value;
+            var coefficient = problem["coefficient"].value;
+            var ugol = problem["ugol"].value;
+            var a = problem["a"].value;
+            var b = problem["b"].value;
+            var c = problem["c"].value;
+            var weight = problem["weight"].value;
+            var gruz = problem["gruz"].value;
+            var loparey = problem["loparey"].value;
+            var poteri = problem["poteri"].value;
+            var blokov = problem["blokov"].value;
 
             if (diameter == "" || coefficient == "" || sila == "" || ugol == "" || a == "" || b == "" || c == "" || weight == ""
                 || gruz == "" || loparey == "" || poteri == "" || blokov == "") {
-                alert("hech qaysi katak bo'sh bo'lmasligi kerak");
+                alert("ни одна ячейка не должна быть пустой");
                 return false;
             }
         }
     </script>
 </head>
 <body>
-<br/><br/>
-<form name="problem" th:action="@{/solve}"
-      th:object="${problem}" method="POST" onsubmit="return validateForm()">
-    <table border="0">
-        <tr>
-            <td>диаметр тормозного шкива</td>
-            <td>:</td>
-            <td><input type="text" name="diameter"
-                       onkeypress="return (event.charCode >= 48 && event.charCode <= 57) || event.charCode == 46 || event.charCode == 0 ">
 
-            <td>сила упрагости тормозной пружины</td>
-            <td>:</td>
-            <td><input type="text" name="sila"
-                       onkeypress="return (event.charCode >= 48 && event.charCode <= 57) || event.charCode == 46 || event.charCode == 0 ">
-        </tr>
+<div class="hero-image">
+    <div class="hero-text">
+        <form name="problem" th:action="@{/solve}"
+              th:object="${problem}" method="POST" onsubmit="return validateForm()">
+            <table border="0">
+                <tr>
+                    <td>F<sub>пруж</sub>-диаметр тормозного шкива</td>
+                    <td>:</td>
+                    <td><input type="text" name="diameter"
+                               onkeypress="return (event.charCode >= 48 && event.charCode <= 57) || event.charCode == 46 || event.charCode == 0 ">
 
-        <tr>
-            <td>коэффициент трения ленты о шкив</td>
-            <td>:</td>
-            <td><input type="text" name="coefficient"
-                       onkeypress="return (event.charCode >= 48 && event.charCode <= 57) || event.charCode == 46 || event.charCode == 0 ">
-            <td>угол обхвата лентой тормозного шкива</td>
-            <td>:</td>
-            <td><input type="text" name="ugol"
-                       onkeypress="return (event.charCode >= 48 && event.charCode <= 57) || event.charCode == 46 || event.charCode == 0 ">
-        </tr>
+                    <td>D<sub>T</sub>-сила упрагости тормозной пружины</td>
+                    <td>:</td>
+                    <td><input type="text" name="sila"
+                               onkeypress="return (event.charCode >= 48 && event.charCode <= 57) || event.charCode == 46 || event.charCode == 0 ">
+                </tr>
 
-        <tr>
-            <td>a</td>
-            <td>:</td>
-            <td><input type="text" name="a"
-                       onkeypress="return (event.charCode >= 48 && event.charCode <= 57) || event.charCode == 46 || event.charCode == 0 ">
-            <td>b</td>
-            <td>:</td>
-            <td><input type="text" name="b"
-                       onkeypress="return (event.charCode >= 48 && event.charCode <= 57) || event.charCode == 46 || event.charCode == 0 ">
-            <td>c</td>
-            <td>:</td>
-            <td><input type="text" name="c"
-                       onkeypress="return (event.charCode >= 48 && event.charCode <= 57) || event.charCode == 46 || event.charCode == 0 ">
-        </tr>
+                <tr>
+                    <td>f - коэффициент трения ленты о шкив</td>
+                    <td>:</td>
+                    <td><input type="text" name="coefficient"
+                               onkeypress="return (event.charCode >= 48 && event.charCode <= 57) || event.charCode == 46 || event.charCode == 0 ">
+                    <td>α - угол обхвата лентой тормозного шкива</td>
+                    <td>:</td>
+                    <td><input type="text" name="ugol"
+                               onkeypress="return (event.charCode >= 48 && event.charCode <= 57) || event.charCode == 46 || event.charCode == 0 ">
+                </tr>
 
-        <tr>
-            <td>масса груза</td>
-            <td>:</td>
-            <td><input type="text" name="weight"
-                       onkeypress="return (event.charCode >= 48 && event.charCode <= 57) || event.charCode == 46 || event.charCode == 0 ">
-            <td>количетво ветвей шкентеля</td>
-            <td>:</td>
-            <td><input type="text" name="gruz"
-                       onkeypress="return (event.charCode >= 48 && event.charCode <= 57) || event.charCode == 46 || event.charCode == 0 ">
-        </tr>
+                <tr>
+                    <td>a</td>
+                    <td>:</td>
+                    <td><input type="text" name="a"
+                               onkeypress="return (event.charCode >= 48 && event.charCode <= 57) || event.charCode == 46 || event.charCode == 0 ">
+                    <td>b</td>
+                    <td>:</td>
+                    <td><input type="text" name="b"
+                               onkeypress="return (event.charCode >= 48 && event.charCode <= 57) || event.charCode == 46 || event.charCode == 0 ">
+                    <td>c</td>
+                    <td>:</td>
+                    <td><input type="text" name="c"
+                               onkeypress="return (event.charCode >= 48 && event.charCode <= 57) || event.charCode == 46 || event.charCode == 0 ">
+                </tr>
 
-        <tr>
-            <td>количество лапарей</td>
-            <td>:</td>
-            <td><input type="text" name="loparey"
-                       onkeypress="return (event.charCode >= 48 && event.charCode <= 57) || event.charCode == 46 || event.charCode == 0 ">
-            <td>учитыйвающий потери</td>
-            <td>:</td>
-            <td><input type="text" name="poteri"
-                       onkeypress="return (event.charCode >= 48 && event.charCode <= 57) || event.charCode == 46 || event.charCode == 0 ">
-        </tr>
+                <tr>
+                    <td>m<sub>Q</sub>-масса груза</td>
+                    <td>:</td>
+                    <td><input type="text" name="weight"
+                               onkeypress="return (event.charCode >= 48 && event.charCode <= 57) || event.charCode == 46 || event.charCode == 0 ">
+                    <td>п<sub>мр</sub>-количетво ветвей шкентеля</td>
+                    <td>:</td>
+                    <td><input type="text" name="gruz"
+                               onkeypress="return (event.charCode >= 48 && event.charCode <= 57) || event.charCode == 46 || event.charCode == 0 ">
+                </tr>
 
-        <tr>
-            <td>колоичество блоков</td>
-            <td>:</td>
-            <td><input type="text" name="blokov"
-                       onkeypress="return (event.charCode >= 48 && event.charCode <= 57) || event.charCode == 46 || event.charCode == 0 ">
-            <td>диаметр тросового барабана</td>
-            <td>:</td>
-            <td><input type="text" name="diametrBarabana"
-                       onkeypress="return (event.charCode >= 48 && event.charCode <= 57) || event.charCode == 46 || event.charCode == 0 ">
-        </tr>
-    </table>
-    <input type="submit" th:value="Solve"/>
-</form>
-<br/>
+                <tr>
+                    <td>п<sub>л</sub>-количество лапарей</td>
+                    <td>:</td>
+                    <td><input type="text" name="loparey"
+                               onkeypress="return (event.charCode >= 48 && event.charCode <= 57) || event.charCode == 46 || event.charCode == 0 ">
+                    <td>η<sub>бл</sub>-учитыйвающий потери</td>
+                    <td>:</td>
+                    <td><input type="text" name="poteri"
+                               onkeypress="return (event.charCode >= 48 && event.charCode <= 57) || event.charCode == 46 || event.charCode == 0 ">
+                </tr>
+
+                <tr>
+                    <td>п<sub>бл</sub>-колоичество блоков</td>
+                    <td>:</td>
+                    <td><input type="text" name="blokov"
+                               onkeypress="return (event.charCode >= 48 && event.charCode <= 57) || event.charCode == 46 || event.charCode == 0 ">
+                    <td>D<sub>б</sub>-диаметр тросового барабана</td>
+                    <td>:</td>
+                    <td><input type="text" name="diametrBarabana"
+                               onkeypress="return (event.charCode >= 48 && event.charCode <= 57) || event.charCode == 46 || event.charCode == 0 ">
+                </tr>
+            </table>
+            <input type="submit" th:value="Решать"/>
+        </form>
+    </div>
+</div>
+
 </body>
 </html>
