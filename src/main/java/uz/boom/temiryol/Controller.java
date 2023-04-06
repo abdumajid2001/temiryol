@@ -27,7 +27,7 @@ public class Controller {
         double f_q = problem.getWeight() * 9.81;
         double f_sh_k = f_q / i_g * n_pl;
         double t_b = f_sh_k * problem.getDiametrBarabana() / 2;
-        boolean result = t_b / t_r_t >= 1.5;
+        boolean result = t_r_t / t_b >= 1.5;
 
         model.addAttribute("result", result);
 

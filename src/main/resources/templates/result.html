@@ -40,6 +40,7 @@
 
 <div th:class="${result} ? hero-background-green : hero-background-red">
     <div class="hero-text">
+        <a th:text="${result} ? 'Ленточный тормоз обеспечивает надежное торможение' : 'Ленточный тормоз не обеспечивает надёжное торможение'"></a>
         <a th:href="@{/}"><h1>Назад</h1></a>
     </div>
 </div>

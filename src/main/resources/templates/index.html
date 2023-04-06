@@ -21,9 +21,8 @@
         .hero-text {
             text-align: center;
             position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
+            top: 30%;
+            left: 10%;
             color: white;
         }
     </style>
@@ -62,71 +61,71 @@
                 <tr>
                     <td>F<sub>пруж</sub>-диаметр тормозного шкива</td>
                     <td>:</td>
-                    <td><input type="text" name="diameter"
+                    <td><input type="text" name="diameter" size="5"
                                onkeypress="return (event.charCode >= 48 && event.charCode <= 57) || event.charCode == 46 || event.charCode == 0 ">
 
-                    <td>D<sub>T</sub>-сила упрагости тормозной пружины</td>
+                    <td>D<sub>T</sub>-сила упругости тормозной пружины</td>
                     <td>:</td>
-                    <td><input type="text" name="sila"
+                    <td><input type="text" name="sila" size="5"
                                onkeypress="return (event.charCode >= 48 && event.charCode <= 57) || event.charCode == 46 || event.charCode == 0 ">
                 </tr>
 
                 <tr>
                     <td>f - коэффициент трения ленты о шкив</td>
                     <td>:</td>
-                    <td><input type="text" name="coefficient"
+                    <td><input type="text" name="coefficient" size="5"
                                onkeypress="return (event.charCode >= 48 && event.charCode <= 57) || event.charCode == 46 || event.charCode == 0 ">
                     <td>α - угол обхвата лентой тормозного шкива</td>
                     <td>:</td>
-                    <td><input type="text" name="ugol"
+                    <td><input type="text" name="ugol" size="5"
                                onkeypress="return (event.charCode >= 48 && event.charCode <= 57) || event.charCode == 46 || event.charCode == 0 ">
                 </tr>
 
                 <tr>
-                    <td>a</td>
+                    <td>a - плечи сил</td>
                     <td>:</td>
-                    <td><input type="text" name="a"
+                    <td><input type="text" name="a" size="5"
                                onkeypress="return (event.charCode >= 48 && event.charCode <= 57) || event.charCode == 46 || event.charCode == 0 ">
-                    <td>b</td>
+                    <td>b - плечи сил</td>
                     <td>:</td>
-                    <td><input type="text" name="b"
+                    <td><input type="text" name="b" size="5"
                                onkeypress="return (event.charCode >= 48 && event.charCode <= 57) || event.charCode == 46 || event.charCode == 0 ">
-                    <td>c</td>
+                    <td>c - плечи сил</td>
                     <td>:</td>
-                    <td><input type="text" name="c"
+                    <td><input type="text" name="c" size="5"
                                onkeypress="return (event.charCode >= 48 && event.charCode <= 57) || event.charCode == 46 || event.charCode == 0 ">
                 </tr>
 
                 <tr>
                     <td>m<sub>Q</sub>-масса груза</td>
                     <td>:</td>
-                    <td><input type="text" name="weight"
+                    <td><input type="text" name="weight" size="5"
                                onkeypress="return (event.charCode >= 48 && event.charCode <= 57) || event.charCode == 46 || event.charCode == 0 ">
-                    <td>п<sub>мр</sub>-количетво ветвей шкентеля</td>
+                    <td>п<sub>тр</sub>-количество ветвей шкентеля</td>
                     <td>:</td>
-                    <td><input type="text" name="gruz"
-                               onkeypress="return (event.charCode >= 48 && event.charCode <= 57) || event.charCode == 46 || event.charCode == 0 ">
-                </tr>
-
-                <tr>
-                    <td>п<sub>л</sub>-количество лапарей</td>
-                    <td>:</td>
-                    <td><input type="text" name="loparey"
-                               onkeypress="return (event.charCode >= 48 && event.charCode <= 57) || event.charCode == 46 || event.charCode == 0 ">
-                    <td>η<sub>бл</sub>-учитыйвающий потери</td>
-                    <td>:</td>
-                    <td><input type="text" name="poteri"
+                    <td><input type="text" name="gruz" size="5"
                                onkeypress="return (event.charCode >= 48 && event.charCode <= 57) || event.charCode == 46 || event.charCode == 0 ">
                 </tr>
 
                 <tr>
-                    <td>п<sub>бл</sub>-колоичество блоков</td>
+                    <td>п<sub>л</sub>-количество лопарей</td>
                     <td>:</td>
-                    <td><input type="text" name="blokov"
+                    <td><input type="text" name="loparey" size="5"
+                               onkeypress="return (event.charCode >= 48 && event.charCode <= 57) || event.charCode == 46 || event.charCode == 0 ">
+                    <td>η<sub>бл</sub>-к.п.д., учитывающий потери</td>
+                    <td>:</td>
+                    <td><input type="text" name="poteri" size="5"
+                               onkeypress="return (event.charCode >= 48 && event.charCode <= 57) || event.charCode == 46 || event.charCode == 0 ">
+                </tr>
+
+                <tr>
+                    <td>п<sub>бл</sub>-количество блоков</td>
+                    <td>:</td>
+                    <td><input type="text" name="blokov" size="5"
                                onkeypress="return (event.charCode >= 48 && event.charCode <= 57) || event.charCode == 46 || event.charCode == 0 ">
                     <td>D<sub>б</sub>-диаметр тросового барабана</td>
                     <td>:</td>
-                    <td><input type="text" name="diametrBarabana"
+                    <td><input type="text" name="diametrBarabana" size="5"
                                onkeypress="return (event.charCode >= 48 && event.charCode <= 57) || event.charCode == 46 || event.charCode == 0 ">
                 </tr>
             </table>
